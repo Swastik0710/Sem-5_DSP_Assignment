@@ -8,3 +8,4 @@ stem(t,x,'b');
 xlabel('Time');
 ylabel('Amplitude');
 title('Unit Impulse Signal');
+grid on;
