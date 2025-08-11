@@ -5,7 +5,7 @@ x1=1-abs(t)/a;
 x2=0;
 x=x1.*(abs(t)<=a)+x2.*(abs(t)>a);
 subplot(3,3,9);
-stem(t,x,'g');
+plot(t,x,'g');
 xlabel('Time');
 ylabel('Amplitude');
 title('Triangular Signal');
