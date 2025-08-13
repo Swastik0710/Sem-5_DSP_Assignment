@@ -1,0 +1,27 @@
+%LINEAR CONVOLUTION_2
+x=[3 0 -2 4 5 1];
+h=[1 5 2 -1];
+N1=length(x);
+N2=length(h);
+n1=0:1:N1-1;
+n2=0:1:N2-1;
+subplot(3,1,1);
+stem(n1,x,'g');
+xlabel('Discrete Time (n)--->');
+ylabel('Amplitude of x(n)--->');
+title('Discrete Input Signal [x(n)=(3,0,-2,4,5,1)]');
+grid on;
+subplot(3,1,2);
+stem(n2,h,'r');
+xlabel('Discrete Time (n)--->');
+ylabel('Amplitude of h(n)--->');
+title('Discrete Input Signal [h(n)=1]');
+grid on;
+y=conv(x,h);
+n3=0:1:N1+N2-2;
+subplot(3,1,3);
+stem(n3,y,'b');
+xlabel('Discrete Time (n)--->');
+ylabel('Amplitude of y(n)--->');
+title('Convolution of y(n)=x(n)*h(n)');
+grid on;
