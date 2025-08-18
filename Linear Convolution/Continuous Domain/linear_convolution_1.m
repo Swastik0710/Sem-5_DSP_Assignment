@@ -1,0 +1,27 @@
+% LINEAR CONVOLUTION_1
+t_min=0;
+t_max=10;
+t=t_min:0.01:t_max;
+x=1.*(t>=1&t<=10);
+h=1.*(t>=2&t<=10);
+subplot(3,1,1);
+plot(t,x,'r');
+xlabel('Continuous Time(t)--->');
+ylabel('Amplitude of x(t)--->');
+title('Continuous Time Signal [x(t)=1]');
+grid on;
+subplot(3,1,2);
+plot(t,h,'b');
+xlabel('Continuous Time(t)--->');
+ylabel('Amplitude of h(t)--->');
+title('Impulse Response [h(t)=1]');
+grid on;
+y=conv(x,h);
+n1=length(y);
+t1=0:1:(n1-1);
+subplot(3,1,3);
+plot(t1,y,'m');
+xlabel('Continuous Time(t)--->');
+ylabel('Amplitude of y(t)--->');
+title('Convolution of x(t)*h(t)=y(t)');
+grid on;
