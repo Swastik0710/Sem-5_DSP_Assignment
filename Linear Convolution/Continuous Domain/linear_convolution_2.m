@@ -1,9 +1,9 @@
 % LINEAR CONVOLUTION_2
 t_min=0;
-t_max=10;
+t_max=15;
 t=t_min:0.01:t_max;
-x1=1.*(t>=1&t<=10);
-x2=1.*(t>=2&t<=10);
+x1=1.*(t>=0&t<=2);
+x2=1.*(t>=0&t<=1)+(-1).*(t>1&t<=2);
 subplot(3,1,1);
 plot(t,x1,'g');
 xlabel('Continuous Time(t)--->');
@@ -21,7 +21,6 @@ n1=length(y);
 t1=0:1:(n1-1);
 subplot(3,1,3);
 plot(t1,y,'r');
-xlim([0 600]);
 xlabel('Time (dt)--->');
 ylabel('Amplitude y(t)dt--->');
 title('Convolution of x(t)*h(t)=y(t)');
