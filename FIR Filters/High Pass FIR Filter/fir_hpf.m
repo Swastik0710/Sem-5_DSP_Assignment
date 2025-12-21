@@ -1,0 +1,20 @@
+% Design of FIR High Pass Filter using Rectangular and Blackman window functions
+clc;
+clear all;
+close all;
+N=15;
+wc=0.5*pi;
+alpha=(N-1)/2;
+b=0.001;
+n=0:(N-1);
+w=0:0.01:pi;
+hd=((sin(n-alpha+b).*pi)-(sin(n-alpha+b).*wc))./((n-alpha+b).*pi);
+Wr=boxcar(N);
+hr_rect=hd.*Wr';
+Hr=freqz(hr_rect,1,w);
+Wh=blackman(N);
+hn_hamm=hd.*Wh';
+Hn=freqz(hn_hamm,1,w);
+plot(w/pi,20*log10(abs(Hr)),'b');
+hold on;
+plot(w/pi,20*log10(abs(Hn)),'r');
