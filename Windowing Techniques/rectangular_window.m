@@ -10,7 +10,7 @@ y = freqz(Wn,1,w);
 mag = 20*log10(abs(y));
 subplot(3,1,1);
 stem(n, Wr);
-title('Blackman window for N = 15');
+title('Rectangular window for N = 15');
 xlabel('n');
 ylabel('Amplitude');
 grid on;
