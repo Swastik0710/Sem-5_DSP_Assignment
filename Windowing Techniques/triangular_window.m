@@ -1,0 +1,28 @@
+% Triangular Window for N = 15
+clc;
+clear all;
+close all;
+N = 15;
+n = -((N-1)/2):((N-1)/2);
+Wr = bartlett(N);
+w = -pi:0.001:pi;
+y = freqz(Wn,1,w);
+mag = 20*log10(abs(y));
+subplot(3,1,1);
+stem(n, Wr);
+title('Bartlett window for N = 15');
+xlabel('n');
+ylabel('Amplitude');
+grid on;
+subplot(3,1,2);
+plot(w/(2*pi), abs(y));
+title('Normalized Magnitude Response');
+xlabel('Normalized frequency');
+ylabel('|Y(w)|');
+grid on;
+subplot(3,1,3);
+plot(w/(2*pi), mag);
+title('Magnitude Spectrum in dB');
+xlabel('Normalized frequency');
+ylabel('Magnitude (dB)');
+grid on;
